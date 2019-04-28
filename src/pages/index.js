@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import {createGlobalStyle} from "styled-components"
-import Navbar from "../components/navbar"
+import Navbar from "../components/navBar"
+import ContentGrid from "../components/contentGrid"
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -14,5 +15,6 @@ export default () => (
   <React.Fragment>
     <GlobalStyle />
     <Navbar />
+    <ContentGrid />
   </React.Fragment>
 )
