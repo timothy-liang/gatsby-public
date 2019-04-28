@@ -86,11 +86,26 @@ const HamburgerInner = styled.span`
   `
   :""}
 `
+export default class extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isActive: false};
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-export default props => (
-  <Hamburger>
-    <HamburgerBox>
-      <HamburgerInner active={props.active}/>
-    </HamburgerBox>
-  </Hamburger>
-)
+  handleClick() {
+    this.setState(state => ({
+      isActive: !state.isActive
+    }));
+  }
+
+  render () {
+    return (
+      <Hamburger onClick={this.handleClick}>
+        <HamburgerBox>
+          <HamburgerInner active={this.state.isActive}/>
+        </HamburgerBox>
+      </Hamburger>
+    )
+  }
+}

@@ -67,7 +67,7 @@ export default props => (
       <NavLink to="/" focused={props.focus === "Work"}>Work</NavLink>
       <NavLink to="/about/" focused={props.focus === "About"}>About</NavLink>
       {/* <NavLink to="/">Résumé</NavLink> */}
-      <Hamburger active={true}/>
+      <Hamburger />
     </NavCluster>
 
   </NavBar>
