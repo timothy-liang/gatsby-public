@@ -12,11 +12,18 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+const MainPage = styled.div`
+  max-width: 1400px;
+  margin: auto;
+`
+
 export default () => (
   <React.Fragment>
     <GlobalStyle />
-    <Navbar />
-    <ContentGrid />
-    <Footer />
+    <MainPage>
+      <Navbar />
+      <ContentGrid />
+      <Footer />
+    </MainPage>
   </React.Fragment>
 )

@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 const ContentGrid = styled.div`
   background-color: LavenderBlush;
+
   max-width: 1200px;
   margin: 0 auto;
 
@@ -32,9 +33,9 @@ const ContentBox = styled.div`
 
 export default () => (
   <ContentGrid>
-    <ContentBox>1</ContentBox>
-    <ContentBox>2</ContentBox>
-    <ContentBox>3</ContentBox>
-    <ContentBox>4</ContentBox>
+    <ContentBox>Google r2</ContentBox>
+    <ContentBox>Instagram</ContentBox>
+    <ContentBox>Google</ContentBox>
+    <ContentBox>StarL</ContentBox>
   </ContentGrid>
 )

@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 const Footer = styled.div`
   background-color: Azure;
+
   width: 100%;
   text-align:center;
   margin-top: 20px;
@@ -10,5 +11,5 @@ const Footer = styled.div`
 `
 
 export default () => (
-  <Footer>Footer</Footer>
+  <Footer>© 2019 Tim Liang</Footer>
 )

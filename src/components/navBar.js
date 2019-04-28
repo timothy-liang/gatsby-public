@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 import "../styles/fonts.css"
 
 const NavBar = styled.div`
@@ -19,8 +20,34 @@ const NavCluster = styled.div`
   padding: 20px;
 `
 
-const NavButton = styled.button`
+// const NavButtonWrapper = styled.div`
+//   background-color: White;
+
+//   border: none;
+//   border-bottom 1px solid Black;
+//   margin: 20px;
+//   padding: 2px 0px;
+
+//   font-family: Lato;
+//   font-size: 20px;
+
+//   &:hover {
+//     cursor: pointer;
+//   }
+// `
+
+// const NavButton = (props) => (
+//   <NavButtonWrapper>
+//     <Link to={props.to}>{props.text}</Link>
+//   </NavButtonWrapper>
+// )
+
+const NavLink = styled(props =>
+  <Link {...props} />
+)`
   background-color: White;
+
+  display: inline-box;
 
   border: none;
   border-bottom 1px solid Black;
@@ -29,6 +56,7 @@ const NavButton = styled.button`
 
   font-family: Lato;
   font-size: 20px;
+  text-decoration: none;
 
   &:hover {
     cursor: pointer;
@@ -50,13 +78,13 @@ export default () => (
     </NavCluster> */}
 
     <NavCluster>
-      <NavLogo>Tim Liang</NavLogo>
+      <NavLogo>TIM LIANG</NavLogo>
     </NavCluster>
 
     <NavCluster>
-      <NavButton>Work</NavButton>
-      <NavButton>About</NavButton>
-      <NavButton>Resume</NavButton>
+      <NavLink to="/">Work</NavLink>
+      <NavLink to="/">About</NavLink>
+      <NavLink to="/">Résumé</NavLink>
     </NavCluster>
 
   </NavBar>
