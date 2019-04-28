@@ -2,11 +2,12 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import "../styles/fonts.css"
+import Hamburger from "../components/hamburger"
 
 const NavBar = styled.div`
-  background-color: AliceBlue;
+  // background-color: AliceBlue;
 
-  margin: 0;
+  margin-bottom: 50px;
   padding: 0px 20px;
 
   display: flex;
@@ -15,34 +16,10 @@ const NavBar = styled.div`
 `
 
 const NavCluster = styled.div`
-  background-color: Azure;
-
-  padding: 20px;
+  // background-color: Azure;
 `
 
-// const NavButtonWrapper = styled.div`
-//   background-color: White;
-
-//   border: none;
-//   border-bottom 1px solid Black;
-//   margin: 20px;
-//   padding: 2px 0px;
-
-//   font-family: Lato;
-//   font-size: 20px;
-
-//   &:hover {
-//     cursor: pointer;
-//   }
-// `
-
-// const NavButton = (props) => (
-//   <NavButtonWrapper>
-//     <Link to={props.to}>{props.text}</Link>
-//   </NavButtonWrapper>
-// )
-
-const NavLink = styled(props =>
+const NavLink = styled(({focused, ...props}) =>
   <Link {...props} />
 )`
   background-color: White;
@@ -50,16 +27,21 @@ const NavLink = styled(props =>
   display: inline-box;
 
   border: none;
-  border-bottom 1px solid Black;
+  // border-bottom 1px solid Black;
   margin: 20px;
   padding: 2px 0px;
 
   font-family: Lato;
-  font-size: 20px;
+  font-size: 23px;
   text-decoration: none;
+  color: ${props => props.focused ? "black" : "gray" };
 
-  &:hover {
+  :hover {
     cursor: pointer;
+  }
+
+  @media (max-width: 1000px) {
+    display: none;
   }
 `
 
@@ -67,10 +49,10 @@ const NavLogo = styled.div`
   margin: 20px;
 
   font-family: Lato;
-  font-size: 30px;
+  font-size: 23px;
 `
 
-export default () => (
+export default props => (
   <NavBar>
 
     {/* <NavCluster>
@@ -82,9 +64,10 @@ export default () => (
     </NavCluster>
 
     <NavCluster>
-      <NavLink to="/">Work</NavLink>
-      <NavLink to="/">About</NavLink>
-      <NavLink to="/">Résumé</NavLink>
+      <NavLink to="/" focused={props.focus === "Work"}>Work</NavLink>
+      <NavLink to="/about/" focused={props.focus === "About"}>About</NavLink>
+      {/* <NavLink to="/">Résumé</NavLink> */}
+      <Hamburger active={true}/>
     </NavCluster>
 
   </NavBar>

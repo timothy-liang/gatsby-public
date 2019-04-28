@@ -21,7 +21,7 @@ export default () => (
   <React.Fragment>
     <GlobalStyle />
     <MainPage>
-      <Navbar />
+      <Navbar focus="Work"/>
       <ContentGrid />
       <Footer />
     </MainPage>

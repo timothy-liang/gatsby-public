@@ -2,40 +2,45 @@ import React from "react"
 import styled from "styled-components"
 
 const ContentGrid = styled.div`
-  background-color: LavenderBlush;
+  // background-color: LavenderBlush;
 
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0px auto;
 
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 25px;
   grid-template-columns: repeat(auto-fit, 500px);
-  grid-template-rows: repeat(2, 500px);
+  grid-template-rows: repeat(2, 400px);
   align-items: center;
   justify-content: center;
 `
 
 const ContentBox = styled.div`
-  background-color: Gainsboro;
-
-  border: 2px solid;
-  border-color: HoneyDew;
+  background-color: ${props => props.backgroundColor};
 
   width:500px;
-  height: 500px;
-
-  font-size: 100px;
+  height: 400px;
+  border-radius: 3px;
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.1);
+  font-size: 15px;
+  font-family: Asap, sans-serif;
 
   display: flex;
   align-items: center;
   justify-content: center;
 `
 
+const color1 = "#463F3A"
+const color2 = "#BCB8B1"
+// const color3 = "#F4F3EE"
+const color3 = "#FFD289"
+const color4 = "#E0AFA0"
+
 export default () => (
   <ContentGrid>
-    <ContentBox>Google r2</ContentBox>
-    <ContentBox>Instagram</ContentBox>
-    <ContentBox>Google</ContentBox>
-    <ContentBox>StarL</ContentBox>
+    <ContentBox backgroundColor={color1}></ContentBox>
+    <ContentBox backgroundColor={color2}></ContentBox>
+    <ContentBox backgroundColor={color3}></ContentBox>
+    <ContentBox backgroundColor={color4}></ContentBox>
   </ContentGrid>
 )
