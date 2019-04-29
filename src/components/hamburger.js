@@ -1,8 +1,10 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 import "../styles/fonts.css"
 
 const Hamburger = styled.button`
+  z-index: 100;
   padding: 15px 15px;
   display: inline-block;
   cursor: pointer;
@@ -20,6 +22,8 @@ const Hamburger = styled.button`
   :hover {
     opacity: 0.7;
   }
+
+  outline: none;
 
   // @media (min-width: 1000px) {
   //   display: none;
@@ -86,6 +90,46 @@ const HamburgerInner = styled.span`
   `
   :""}
 `
+
+
+const HamburgerLink = styled(props =>
+  <Link {...props} />
+)`
+  position: relative;
+  width: 200px;
+
+  display: block;
+  border: none;
+  // border-bottom 1px solid Black;
+  margin: 20px auto;
+  top: 30%;
+
+  font-family: Lato;
+  font-size: 30px;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+
+  :hover {
+    cursor: pointer;
+  }
+
+  opacity: ${props => props.active ? "1" : "0"};
+  transition: opacity ${props => props.active ? ".7s" : "0s"};
+  transition-timing-function: ease-in;
+`
+
+const HamburgerMenu = styled.div`
+    background-color: white;
+    width: 100%;
+    position: absolute;
+    top: 75px;
+    left: 0px;
+    height: ${props => props.active ? "50%" : "0%"};
+    transition: height .32s;
+    transition-timing-function: ease;
+`
+
 export default class extends React.Component {
   constructor(props) {
     super(props);
@@ -101,11 +145,17 @@ export default class extends React.Component {
 
   render () {
     return (
+      <span>
       <Hamburger onClick={this.handleClick}>
         <HamburgerBox>
           <HamburgerInner active={this.state.isActive}/>
         </HamburgerBox>
       </Hamburger>
+      <HamburgerMenu active={this.state.isActive}>
+        <HamburgerLink to="/" active={this.state.isActive}>Work</HamburgerLink>
+        <HamburgerLink to="/about/" active={this.state.isActive}>About</HamburgerLink>
+      </HamburgerMenu>
+      </span>
     )
   }
 }
