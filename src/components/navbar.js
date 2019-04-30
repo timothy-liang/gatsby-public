@@ -5,8 +5,6 @@ import "../styles/fonts.css"
 import Hamburger from "../components/hamburger"
 
 const NavBar = styled.div`
-  // background-color: AliceBlue;
-
   margin-bottom: 6%;
   padding: 0px 20px;
 
@@ -16,7 +14,6 @@ const NavBar = styled.div`
 `
 
 const NavCluster = styled.div`
-  // background-color: Azure;
 `
 
 const NavLink = styled(({focused, ...props}) =>
@@ -27,7 +24,6 @@ const NavLink = styled(({focused, ...props}) =>
   display: inline-box;
 
   border: none;
-  // border-bottom 1px solid Black;
   margin: 20px;
   padding: 2px 0px;
 
@@ -56,21 +52,13 @@ const NavLogo = styled.div`
 
 export default props => (
   <NavBar>
-
-    {/* <NavCluster>
-      <NavButton>Work</NavButton>
-    </NavCluster> */}
-
     <NavCluster>
       <NavLogo>TIM LIANG</NavLogo>
     </NavCluster>
-
     <NavCluster>
       <NavLink to="/" focused={props.focus === "Work"}>Work</NavLink>
       <NavLink to="/about/" focused={props.focus === "About"}>About</NavLink>
-      {/* <NavLink to="/">Résumé</NavLink> */}
       <Hamburger />
     </NavCluster>
-
   </NavBar>
 )

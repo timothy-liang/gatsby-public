@@ -91,7 +91,6 @@ const HamburgerInner = styled.span`
   :""}
 `
 
-
 const HamburgerLink = styled(({active, ...props}) =>
   <Link {...props} />
 )`
@@ -100,7 +99,6 @@ const HamburgerLink = styled(({active, ...props}) =>
 
   display: block;
   border: none;
-  // border-bottom 1px solid Black;
   margin: 20px auto;
   top: 25%;
 
@@ -115,7 +113,7 @@ const HamburgerLink = styled(({active, ...props}) =>
   }
 
   opacity: ${props => props.active ? "1" : "0"};
-  transition: opacity ${props => props.active ? ".7s" : "0s"};
+  transition: opacity ${props => props.active ? "0.7s" : "0s"};
   transition-timing-function: ease-in;
 `
 

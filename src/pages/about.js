@@ -30,9 +30,10 @@ export default () => (
       <TODO>
         <h1>TODO:</h1>
         <ul>
+          <li>Fix mobile experience</li>
           <li>Fix assets not loading</li>
-          <li>Write about page</li>
-          <li>Write project contents</li>
+          <li>Write/layout about page</li>
+          <li>Write/layout project pages</li>
           <li>Add more micro-interactions</li>
           <li>Finalize fonts</li>
           <li>Finalize spacing</li>
