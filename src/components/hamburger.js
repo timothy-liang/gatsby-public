@@ -92,7 +92,7 @@ const HamburgerInner = styled.span`
 `
 
 
-const HamburgerLink = styled(props =>
+const HamburgerLink = styled(({active, ...props}) =>
   <Link {...props} />
 )`
   position: relative;
@@ -128,6 +128,7 @@ const HamburgerMenu = styled.div`
     height: ${props => props.active ? "40%" : "0%"};
     transition: height .32s;
     transition-timing-function: ease;
+    z-index: 2;
 `
 
 export default class extends React.Component {
