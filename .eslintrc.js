@@ -3,7 +3,7 @@ module.exports = {
         "browser": true,
         "es6": true
     },
-    "extends": "eslint:recommended",
+    "extends": "airbnb",
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
@@ -35,6 +35,8 @@ module.exports = {
             "error",
             "never"
         ],
-        "no-unused-vars": "off"
+        "no-unused-vars": "off",
+        "react/destructuring-assignment": "off",
+        "react/prop-types": "off"
     }
 }

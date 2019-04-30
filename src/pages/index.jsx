@@ -1,6 +1,6 @@
 import React from "react"
-import styled from "styled-components"
-import {createGlobalStyle} from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
+
 import Navbar from "../components/navBar"
 import ContentGrid from "../components/contentGrid"
 import Footer from "../components/footer"
@@ -24,7 +24,7 @@ const contentData = [
     color: "#DFE6E9",
     image: "ads_logo.svg",
     imageSize: "38%",
-    to: "/about/"
+    to: "/about/",
   },
   {
     title: "Facebook",
@@ -32,7 +32,7 @@ const contentData = [
     color: "#E56969",
     image: "ig_logo_2.svg",
     imageSize: "43%",
-    to: "/about/"
+    to: "/about/",
   },
   {
     title: "Google",
@@ -40,7 +40,7 @@ const contentData = [
     color: "#463F3A",
     image: "chrome_logo_2.svg",
     imageSize: "32%",
-    to: "/about/"
+    to: "/about/",
   },
   {
     title: "Vanderbilt",
@@ -48,20 +48,20 @@ const contentData = [
     color: "#BCB8B1",
     image: "vandy_logo.png",
     imageSize: "35%",
-    to: "/about"
-  }
+    to: "/about",
+  },
 ]
 
-//FFE5D9 - peach    //BB8588 - unsaturated red
-//F0B67F - orangish //ffdf9e - ig light yellow
-//E56969 - ig red
+// FFE5D9 - peach    //BB8588 - unsaturated red
+// F0B67F - orangish //ffdf9e - ig light yellow
+// E56969 - ig red
 
 export default () => (
   <React.Fragment>
     <GlobalStyle />
     <MainPage>
-      <Navbar focus="Work"/>
-      <ContentGrid contentData={contentData}/>
+      <Navbar focus="Work" />
+      <ContentGrid contentData={contentData} />
       <Footer />
     </MainPage>
   </React.Fragment>

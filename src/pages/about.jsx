@@ -1,6 +1,6 @@
 import React from "react"
-import styled from "styled-components"
-import {createGlobalStyle} from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
+
 import Navbar from "../components/navBar"
 import Footer from "../components/footer"
 import "../styles/fonts.css"
@@ -26,7 +26,7 @@ export default () => (
   <React.Fragment>
     <GlobalStyle />
     <MainPage>
-      <Navbar focus="About"/>
+      <Navbar focus="About" />
       <TODO>
         <h1>TODO:</h1>
         <ul>

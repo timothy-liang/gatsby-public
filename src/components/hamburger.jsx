@@ -54,7 +54,6 @@ const HamburgerInner = styled.span`
     display: block;
   }
 
-  top: auto;
   bottom: 0;
   transition-duration: 0.13s;
   transition-delay: 0.13s;
@@ -66,11 +65,11 @@ const HamburgerInner = styled.span`
   }
 
   ::before {
-    top -10px;
+    top: -10px;
     transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
 
-  ${props => props.active ? `
+  ${props => (props.active ? `
     transform: translate3d(0, -10px, 0) rotate(-45deg);
     transition-delay: 0.22s;
     transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -87,12 +86,10 @@ const HamburgerInner = styled.span`
       transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
     }
   `
-    :""}
+    : "")}
 `
 
-const HamburgerLink = styled(({active, ...props}) =>
-  <Link {...props} />
-)`
+const HamburgerLink = styled(({ active, ...props }) => <Link {...props} />)`
   position: relative;
   width: 200px;
 
@@ -101,7 +98,7 @@ const HamburgerLink = styled(({active, ...props}) =>
   margin: 20px auto;
   top: 25%;
 
-  font-family: Asap;
+  font-family: Asap, sans-serif;
   font-size: 30px;
   text-decoration: none;
   color: black;
@@ -111,8 +108,8 @@ const HamburgerLink = styled(({active, ...props}) =>
     cursor: pointer;
   }
 
-  opacity: ${props => props.active ? "1" : "0"};
-  transition: opacity ${props => props.active ? "0.7s" : "0s"};
+  opacity: ${props => (props.active ? "1" : "0")};
+  transition: opacity ${props => (props.active ? "0.7s" : "0s")};
   transition-timing-function: ease-in;
 `
 
@@ -122,7 +119,7 @@ const HamburgerMenu = styled.div`
     position: absolute;
     top: 75px;
     left: 0px;
-    height: ${props => props.active ? "40%" : "0%"};
+    height: ${props => (props.active ? "40%" : "0%")};
     transition: height .32s;
     transition-timing-function: ease;
     z-index: 2;
@@ -131,22 +128,22 @@ const HamburgerMenu = styled.div`
 export default class extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {isActive: false}
+    this.state = { isActive: false }
     this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick() {
     this.setState(state => ({
-      isActive: !state.isActive
+      isActive: !state.isActive,
     }))
   }
 
-  render () {
+  render() {
     return (
       <span>
         <Hamburger onClick={this.handleClick}>
           <HamburgerBox>
-            <HamburgerInner active={this.state.isActive}/>
+            <HamburgerInner active={this.state.isActive} />
           </HamburgerBox>
         </Hamburger>
         <HamburgerMenu active={this.state.isActive}>

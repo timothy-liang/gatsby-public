@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import "../styles/fonts.css"
-import Hamburger from "../components/hamburger"
+import Hamburger from "./hamburger"
 
 const NavBar = styled.div`
   margin-bottom: 6%;
@@ -13,12 +13,10 @@ const NavBar = styled.div`
   justify-content: space-between;
 `
 
-const NavCluster = styled.div`
-`
+// const NavCluster = styled.div`
+// `
 
-const NavLink = styled(({focused, ...props}) =>
-  <Link {...props} />
-)`
+const NavLink = styled(({ focused, ...props }) => <Link {...props} />)`
   background-color: White;
 
   display: inline-box;
@@ -27,11 +25,11 @@ const NavLink = styled(({focused, ...props}) =>
   margin: 20px;
   padding: 2px 0px;
 
-  font-family: Asap;
+  font-family: Asap, sans-serif;
   font-size: 23px;
   letter-spacing: 1px;
   text-decoration: none;
-  color: ${props => props.focused ? "black" : "gray" };
+  color: ${props => (props.focused ? "black" : "gray")};
 
   :hover {
     cursor: pointer;
@@ -45,20 +43,20 @@ const NavLink = styled(({focused, ...props}) =>
 const NavLogo = styled.div`
   margin: 20px;
 
-  font-family: Asap;
+  font-family: Asap, sans-serif;
   font-size: 23px;
   letter-spacing: 1px;
 `
 
 export default props => (
   <NavBar>
-    <NavCluster>
+    <div>
       <NavLogo>TIM LIANG</NavLogo>
-    </NavCluster>
-    <NavCluster>
+    </div>
+    <div>
       <NavLink to="/" focused={props.focus === "Work"}>Work</NavLink>
       <NavLink to="/about/" focused={props.focus === "About"}>About</NavLink>
       <Hamburger />
-    </NavCluster>
+    </div>
   </NavBar>
 )

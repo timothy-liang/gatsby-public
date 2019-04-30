@@ -15,5 +15,11 @@ const Footer = styled.div`
 const year = new Date().getFullYear()
 
 export default () => (
-  <Footer>© {year} Tim Liang</Footer>
+  <Footer>
+    ©
+    {" "}
+    {year}
+    {" "}
+    Tim Liang
+  </Footer>
 )

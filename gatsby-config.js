@@ -1,1 +1,3 @@
-export const plugins = ["gatsby-plugin-styled-components"]
+module.exports = {
+  plugins: ["gatsby-plugin-styled-components"],
+}
