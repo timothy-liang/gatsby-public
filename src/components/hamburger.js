@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 import "../styles/fonts.css"
 
 const Hamburger = styled.button`
-  z-index: 100;
   padding: 15px 15px;
   display: inline-block;
   cursor: pointer;

@@ -24,7 +24,7 @@ const ContentBox = styled.div`
   width:500px;
   height: 400px;
   border-radius: 3px;
-  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.08);
 
   font-size: 15px;
   font-family: Asap, sans-serif;
