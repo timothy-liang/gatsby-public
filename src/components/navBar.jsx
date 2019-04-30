@@ -5,12 +5,17 @@ import "../styles/fonts.css"
 import Hamburger from "./hamburger"
 
 const NavBar = styled.div`
-  margin-bottom: 6%;
   padding: 0px 20px;
 
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  background-color: white;
+  z-index: 3;
+
+  @media (min-width: 699px) {
+    margin-bottom: 6%;
+  }
 `
 
 const NavLink = styled(({ focused, ...props }) => <Link {...props} />)`
@@ -32,7 +37,7 @@ const NavLink = styled(({ focused, ...props }) => <Link {...props} />)`
     cursor: pointer;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 699px) {
     display: none;
   }
 `

@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import "../styles/fonts.css"
 
 const Hamburger = styled.button`
-  padding: 15px 15px;
+  padding: 26px 15px 0px 0px;
   display: inline-block;
   cursor: pointer;
   transition-property: opacity, filter;
@@ -24,7 +24,7 @@ const Hamburger = styled.button`
 
   outline: none;
 
-  @media (min-width: 1000px) {
+  @media (min-width: 699px) {
     display: none;
   }
 `
@@ -117,12 +117,14 @@ const HamburgerMenu = styled.div`
     background-color: white;
     width: 100%;
     position: absolute;
-    top: 75px;
+    top: 50px;
     left: 0px;
     height: ${props => (props.active ? "40%" : "0%")};
     transition: height .32s;
     transition-timing-function: ease;
-    z-index: 2;
+    z-index: 5;
+
+    box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.08);
 `
 
 export default class extends React.Component {
@@ -140,7 +142,7 @@ export default class extends React.Component {
 
   render() {
     return (
-      <span>
+      <React.Fragment>
         <Hamburger onClick={this.handleClick}>
           <HamburgerBox>
             <HamburgerInner active={this.state.isActive} />
@@ -150,7 +152,7 @@ export default class extends React.Component {
           <HamburgerLink to="/" active={this.state.isActive}>Work</HamburgerLink>
           <HamburgerLink to="/about/" active={this.state.isActive}>About</HamburgerLink>
         </HamburgerMenu>
-      </span>
+      </React.Fragment>
     )
   }
 }

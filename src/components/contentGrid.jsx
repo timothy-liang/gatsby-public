@@ -3,8 +3,10 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 const ContentGrid = styled.div`
+  width: 90%;
   max-width: 1200px;
-  margin: 0px auto;
+  margin: auto;
+  margin-top: 5px;
 
   display: grid;
   grid-gap: 25px;
@@ -21,10 +23,13 @@ const ContentBox = styled.div`
   background-repeat: no-repeat;
   background-size: auto ${props => props.backgroundSize};
 
-  width:500px;
+  width: 500px;
+  max-width: 90vw;
+  margin: auto;
+
   height: 400px;
   border-radius: 3px;
-  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.08);
+  // box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.08);
 
   font-size: 15px;
   font-family: Asap, sans-serif;
@@ -43,7 +48,6 @@ const makeRGBA = (hex, opacity) => {
 const ContentOverlay = styled(({ backgroundColor, ...props }) => <Link {...props} />)`
   width: 100%;
   height: 100%;
-  position: relative;
   opacity: 0;
   border-radius: 3px;
 
