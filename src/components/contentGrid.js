@@ -30,17 +30,27 @@ const ContentBox = styled.div`
   justify-content: center;
 `
 
-const color1 = "#463F3A"
-const color2 = "#BCB8B1"
-// const color3 = "#F4F3EE"
-const color3 = "#FFD289"
-const color4 = "#E0AFA0"
+const color4 = "#BCB8B1"
+const color1 = "#dfe6e9"
+const color3 = "#463F3A"
+const color2 = "#E56969"
+//FFE5D9 - peach    //BB8588 - unsaturated red
+//F0B67F - orangish //ffdf9e - ig light yellow
+//E56969 - ig red
 
 export default () => (
   <ContentGrid>
-    <ContentBox backgroundColor={color1}></ContentBox>
-    <ContentBox backgroundColor={color2}></ContentBox>
-    <ContentBox backgroundColor={color3}></ContentBox>
-    <ContentBox backgroundColor={color4}></ContentBox>
+    <ContentBox backgroundColor={color1}>
+      <img src="ads_logo.svg" alt="Google Ads" style={{width:"30%"}} />
+    </ContentBox>
+    <ContentBox backgroundColor={color2}>
+      <img src="ig_logo_2.svg" alt="Instagram" style={{width:"30%", filter:"invert(100%)"}}/>
+    </ContentBox>
+    <ContentBox backgroundColor={color3}>
+      <img src="chrome_logo_2.svg" alt="Google Chrome" style={{width:"30%"}}/>
+    </ContentBox>
+    <ContentBox backgroundColor={color4}>
+      <img src="vandy_logo.png" alt="Vanderbilt" style={{width:"30%"}}/>
+    </ContentBox>
   </ContentGrid>
 )

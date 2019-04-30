@@ -6,13 +6,14 @@ const Footer = styled.div`
 
   width: 100%;
   text-align:center;
-  margin: 100px auto;
+  margin: 100px auto 100px auto;
 
-  font-size: 20px;
+  color: #555555;
+  font-size: 16px;
   font-family: 'Asap', sans-serif;
   letter-spacing: 1px;
 `
 
 export default () => (
-  <Footer>© 2019 Tim Liang</Footer>
+  <Footer>© {new Date().getFullYear()} Tim Liang</Footer>
 )

@@ -25,9 +25,9 @@ const Hamburger = styled.button`
 
   outline: none;
 
-  // @media (min-width: 1000px) {
-  //   display: none;
-  // }
+  @media (min-width: 1000px) {
+    display: none;
+  }
 `
 
 const HamburgerBox = styled.span`
@@ -102,9 +102,9 @@ const HamburgerLink = styled(props =>
   border: none;
   // border-bottom 1px solid Black;
   margin: 20px auto;
-  top: 30%;
+  top: 25%;
 
-  font-family: Lato;
+  font-family: Asap;
   font-size: 30px;
   text-decoration: none;
   color: black;
@@ -125,7 +125,7 @@ const HamburgerMenu = styled.div`
     position: absolute;
     top: 75px;
     left: 0px;
-    height: ${props => props.active ? "50%" : "0%"};
+    height: ${props => props.active ? "40%" : "0%"};
     transition: height .32s;
     transition-timing-function: ease;
 `

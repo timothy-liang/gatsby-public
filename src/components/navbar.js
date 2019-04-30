@@ -7,7 +7,7 @@ import Hamburger from "../components/hamburger"
 const NavBar = styled.div`
   // background-color: AliceBlue;
 
-  margin-bottom: 50px;
+  margin-bottom: 6%;
   padding: 0px 20px;
 
   display: flex;
@@ -31,8 +31,9 @@ const NavLink = styled(({focused, ...props}) =>
   margin: 20px;
   padding: 2px 0px;
 
-  font-family: Lato;
+  font-family: Asap;
   font-size: 23px;
+  letter-spacing: 1px;
   text-decoration: none;
   color: ${props => props.focused ? "black" : "gray" };
 
@@ -48,8 +49,9 @@ const NavLink = styled(({focused, ...props}) =>
 const NavLogo = styled.div`
   margin: 20px;
 
-  font-family: Lato;
+  font-family: Asap;
   font-size: 23px;
+  letter-spacing: 1px;
 `
 
 export default props => (
