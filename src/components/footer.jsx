@@ -16,10 +16,6 @@ const year = new Date().getFullYear()
 
 export default () => (
   <Footer>
-    ©
-    {" "}
-    {year}
-    {" "}
-    Tim Liang
+    {`© ${year} Tim Liang`}
   </Footer>
 )

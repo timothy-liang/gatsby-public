@@ -2,13 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-const makeRGBA = (hex, opacity) => {
-  const r = parseInt(hex.substring(1, 3), 16)
-  const g = parseInt(hex.substring(3, 5), 16)
-  const b = parseInt(hex.substring(5, 7), 16)
-  return `rgba(${r},${g},${b},${opacity})`
-}
-
 const ContentGrid = styled.div`
   max-width: 1200px;
   margin: 0px auto;
@@ -40,6 +33,12 @@ const ContentBox = styled.div`
   align-items: center;
   justify-content: center;
 `
+const makeRGBA = (hex, opacity) => {
+  const r = parseInt(hex.substring(1, 3), 16)
+  const g = parseInt(hex.substring(3, 5), 16)
+  const b = parseInt(hex.substring(5, 7), 16)
+  return `rgba(${r},${g},${b},${opacity})`
+}
 
 const ContentOverlay = styled(({ backgroundColor, ...props }) => <Link {...props} />)`
   width: 100%;
@@ -56,11 +55,13 @@ const ContentOverlay = styled(({ backgroundColor, ...props }) => <Link {...props
 
   overflow:hidden;
 
-  :hover {
-    cursor: pointer;
-    background-color: ${props => makeRGBA(props.backgroundColor, 0.93)};
-    opacity: 1;
-    transition: opacity .4s;
+  @media (hover: hover) {
+    :hover {
+      cursor: pointer;
+      background-color: ${props => makeRGBA(props.backgroundColor, 0.93)};
+      opacity: 1;
+      transition: opacity .4s;
+    }
   }
 `
 
@@ -91,8 +92,9 @@ const ContentDesc = props => (
   </React.Fragment>
 )
 
-const makeContent = contentData => (
+const makeContent = (contentData, index) => (
   <ContentBox
+    key={index}
     backgroundColor={contentData.color}
     backgroundImage={contentData.image}
     backgroundSize={contentData.imageSize}
@@ -105,6 +107,6 @@ const makeContent = contentData => (
 
 export default props => (
   <ContentGrid>
-    {props.contentData.map(data => makeContent(data))}
+    {props.contentData.map((data, index) => makeContent(data, index))}
   </ContentGrid>
 )

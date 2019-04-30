@@ -13,9 +13,6 @@ const NavBar = styled.div`
   justify-content: space-between;
 `
 
-// const NavCluster = styled.div`
-// `
-
 const NavLink = styled(({ focused, ...props }) => <Link {...props} />)`
   background-color: White;
 
