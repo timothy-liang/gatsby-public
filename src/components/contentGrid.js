@@ -87,15 +87,15 @@ const ContentDesc = props => (
 )
 
 const makeRGBA = (hex, opacity) => {
-  let r = parseInt(hex.substring(1,3), 16);
-  let g = parseInt(hex.substring(3,5), 16);
-  let b = parseInt(hex.substring(5,7), 16);
-  return 'rgba('+r+','+g+','+b+','+opacity+')';
+  let r = parseInt(hex.substring(1,3), 16)
+  let g = parseInt(hex.substring(3,5), 16)
+  let b = parseInt(hex.substring(5,7), 16)
+  return "rgba("+r+","+g+","+b+","+opacity+")"
 }
 
 const makeContent = contentData => (
   <ContentBox backgroundColor={contentData.color} backgroundImage={contentData.image}
-              backgroundSize={contentData.imageSize}>
+    backgroundSize={contentData.imageSize}>
     <ContentOverlay backgroundColor={contentData.color} to={contentData.to}>
       <ContentDesc title={contentData.title} subtitle={contentData.subtitle} />
     </ContentOverlay>

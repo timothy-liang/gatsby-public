@@ -87,7 +87,7 @@ const HamburgerInner = styled.span`
       transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
     }
   `
-  :""}
+    :""}
 `
 
 const HamburgerLink = styled(({active, ...props}) =>
@@ -130,29 +130,29 @@ const HamburgerMenu = styled.div`
 
 export default class extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {isActive: false};
-    this.handleClick = this.handleClick.bind(this);
+    super(props)
+    this.state = {isActive: false}
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick() {
     this.setState(state => ({
       isActive: !state.isActive
-    }));
+    }))
   }
 
   render () {
     return (
       <span>
-      <Hamburger onClick={this.handleClick}>
-        <HamburgerBox>
-          <HamburgerInner active={this.state.isActive}/>
-        </HamburgerBox>
-      </Hamburger>
-      <HamburgerMenu active={this.state.isActive}>
-        <HamburgerLink to="/" active={this.state.isActive}>Work</HamburgerLink>
-        <HamburgerLink to="/about/" active={this.state.isActive}>About</HamburgerLink>
-      </HamburgerMenu>
+        <Hamburger onClick={this.handleClick}>
+          <HamburgerBox>
+            <HamburgerInner active={this.state.isActive}/>
+          </HamburgerBox>
+        </Hamburger>
+        <HamburgerMenu active={this.state.isActive}>
+          <HamburgerLink to="/" active={this.state.isActive}>Work</HamburgerLink>
+          <HamburgerLink to="/about/" active={this.state.isActive}>About</HamburgerLink>
+        </HamburgerMenu>
       </span>
     )
   }
