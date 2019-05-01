@@ -31,6 +31,8 @@ const SocialMediaLink = styled.a`
   margin: 10px;
   font-size: 30px;
 
+  transition: color 0.2s ease;
+
   @media (hover: hover) {
     :hover {
       color: black;

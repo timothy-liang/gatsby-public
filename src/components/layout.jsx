@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 export default ({ children, ...props }) => (
-  <div>
+  <React.Fragment>
     <GlobalStyle />
     <NavBar focus={props.focus} />
     <Helmet>
@@ -21,5 +21,5 @@ export default ({ children, ...props }) => (
     </Helmet>
     {children}
     <Footer />
-  </div>
+  </React.Fragment>
 )

@@ -124,7 +124,7 @@ const HamburgerMenu = styled.div`
     position: absolute;
     top: 50px;
     left: 0px;
-    height: ${props => (props.active ? "40%" : "0%")};
+    height: ${props => (props.active ? "350px" : "0px")};
     box-shadow: ${props => (props.active ? "0 4px 4px -4px rgba(0, 0, 0, 0.1)" : "none")};
     transition: height .32s, box-shadow .32s;
     transition-timing-function: ease;

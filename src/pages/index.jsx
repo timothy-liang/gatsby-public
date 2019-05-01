@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 const contentData = [
   {
     title: "Google",
-    subtitle: "Intern",
+    subtitle: "Ads Infra",
     color: "#DFE6E9",
     image: "ads_logo.svg",
     imageSize: "38%",
@@ -14,7 +14,7 @@ const contentData = [
   },
   {
     title: "Facebook",
-    subtitle: "Intern",
+    subtitle: "IG Growth Ranking",
     color: "#E56969",
     image: "ig_logo_2.svg",
     imageSize: "43%",
@@ -22,7 +22,7 @@ const contentData = [
   },
   {
     title: "Google",
-    subtitle: "Intern",
+    subtitle: "Skia Graphics",
     color: "#463F3A",
     image: "chrome_logo_2.svg",
     imageSize: "32%",
@@ -30,7 +30,7 @@ const contentData = [
   },
   {
     title: "Vanderbilt",
-    subtitle: "Researcher & TA",
+    subtitle: "Research & TA",
     color: "#BCB8B1",
     image: "vandy_logo.png",
     imageSize: "35%",

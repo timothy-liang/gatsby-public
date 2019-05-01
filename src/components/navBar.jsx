@@ -37,6 +37,8 @@ const NavLink = styled(({ focused, ...props }) => <Link {...props} />)`
   text-decoration: none;
   color: ${props => (props.focused ? "black" : "gray")};
 
+  transition: color 0.2s ease;
+
   :hover {
     cursor: pointer;
     color: black;
