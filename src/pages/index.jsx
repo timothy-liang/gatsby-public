@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 const contentData = [
   {
     title: "Google",
-    subtitle: "Ads Infra",
+    subtitle: "Ads Infrastructure",
     color: "#DFE6E9",
     image: "ads_logo.svg",
     imageSize: "38%",
