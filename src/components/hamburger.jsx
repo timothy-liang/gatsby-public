@@ -115,6 +115,7 @@ const HamburgerLink = styled(({ active, ...props }) => <Link {...props} />)`
 
   opacity: ${props => (props.active ? "1" : "0")};
   transition: opacity ${props => (props.active ? "0.7s" : "0s")};
+  pointer-events: ${props => (props.active ? "auto" : "none")};
   transition-timing-function: ease-in;
 `
 
