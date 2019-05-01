@@ -27,7 +27,7 @@ export default () => (
     <GlobalStyle />
     <MainPage>
       <Navbar focus="About" />
-      <TODO>
+      {/* <TODO>
         <h1>TODO:</h1>
         <ul>
           <li>Fix mobile experience</li>
@@ -41,7 +41,7 @@ export default () => (
           <li>Clean up code</li>
           <li>Explore GraphQL</li>
         </ul>
-      </TODO>
+      </TODO> */}
       <Footer />
     </MainPage>
   </React.Fragment>

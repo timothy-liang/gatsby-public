@@ -1,5 +1,6 @@
 import React from "react"
 import styled, { createGlobalStyle } from "styled-components"
+import { Link } from "gatsby"
 
 import Navbar from "../components/navBar"
 import Footer from "../components/footer"
@@ -18,8 +19,11 @@ const MainPage = styled.div`
 `
 
 const TODO = styled.div`
-  max-width: 1200px;
-  margin: auto;
+  width: 195px;
+  margin: 20vh auto 10vh auto;
+  font-family: Asap, sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
 `
 
 export default () => (
@@ -27,19 +31,9 @@ export default () => (
     <GlobalStyle />
     <MainPage>
       <TODO>
-        <h1>TODO:</h1>
-        <ul>
-          <li>Fix mobile experience</li>
-          <li>Fix assets not loading</li>
-          <li>Write/layout about page</li>
-          <li>Write/layout project pages</li>
-          <li>Add more micro-interactions</li>
-          <li>Finalize fonts</li>
-          <li>Finalize spacing</li>
-          <li>Finalize logos</li>
-          <li>Clean up code</li>
-          <li>Explore GraphQL</li>
-        </ul>
+        Under construction.
+        <br />
+        <Link style={{ color: "gray" }} to="/">Return.</Link>
       </TODO>
       <Footer />
     </MainPage>
