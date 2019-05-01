@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
+// Original animations by https://jonsuh.com/hamburgers/
+
 const Hamburger = styled.button`
   position: relative;
   top: 10px;
@@ -67,7 +69,8 @@ const HamburgerInner = styled.span`
 
   ::before {
     top: -10px;
-    transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+                transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
 
   ${props => (props.active ? `
@@ -84,7 +87,8 @@ const HamburgerInner = styled.span`
     ::before {
       top: 0;
       transform: rotate(-90deg);
-      transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+      transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+                  transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
     }
   `
     : "")}

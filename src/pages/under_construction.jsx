@@ -1,22 +1,9 @@
 import React from "react"
-import styled, { createGlobalStyle } from "styled-components"
+import styled from "styled-components"
 import { Link } from "gatsby"
 
-import Navbar from "../components/navBar"
-import Footer from "../components/footer"
+import Layout from "../components/layout"
 import "../styles/fonts.css"
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    padding: 0;
-    margin: 0;
-  }
-`
-
-const MainPage = styled.div`
-  // max-width: 1400px;
-  margin: auto;
-`
 
 const TODO = styled.div`
   width: 195px;
@@ -27,15 +14,11 @@ const TODO = styled.div`
 `
 
 export default () => (
-  <React.Fragment>
-    <GlobalStyle />
-    <MainPage>
-      <TODO>
+  <Layout focus="About">
+    <TODO>
         Under construction.
-        <br />
-        <Link style={{ color: "gray" }} to="/">Return.</Link>
-      </TODO>
-      <Footer />
-    </MainPage>
-  </React.Fragment>
+      <br />
+      <Link style={{ color: "gray" }} to="/">Return.</Link>
+    </TODO>
+  </Layout>
 )

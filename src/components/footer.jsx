@@ -24,7 +24,7 @@ const SocialMedia = styled.div`
 const SocialMediaLink = styled.a`
   color: gray;
 
-  :visited, focus, active {
+  :visited {
     color: gray;
   }
 

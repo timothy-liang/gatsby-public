@@ -1,21 +1,7 @@
 import React from "react"
-import styled, { createGlobalStyle } from "styled-components"
 
-import Navbar from "../components/navBar"
 import ContentGrid from "../components/contentGrid"
-import Footer from "../components/footer"
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    padding: 0;
-    margin: 0;
-  }
-`
-
-const MainPage = styled.div`
-  // max-width: 1400px;
-  margin: auto;
-`
+import Layout from "../components/layout"
 
 const contentData = [
   {
@@ -57,12 +43,7 @@ const contentData = [
 // E56969 - ig red
 
 export default () => (
-  <React.Fragment>
-    <GlobalStyle />
-    <MainPage>
-      <Navbar focus="Work" />
-      <ContentGrid contentData={contentData} />
-      <Footer />
-    </MainPage>
-  </React.Fragment>
+  <Layout focus="Work">
+    <ContentGrid contentData={contentData} />
+  </Layout>
 )
