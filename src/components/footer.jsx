@@ -14,7 +14,7 @@ const Copyright = styled.div`
   letter-spacing: 1px;
 `
 
-const SocialMedia = styled.div`
+const SocialMediaBar = styled.div`
   margin-top: 30px;
   color: black;
   display: flex;
@@ -44,7 +44,7 @@ const year = new Date().getFullYear()
 
 export default () => (
   <React.Fragment>
-    <SocialMedia>
+    <SocialMediaBar>
       <SocialMediaLink href="mailto:timothy.liang@vanderbilt.edu">
         <MdMailOutline />
       </SocialMediaLink>
@@ -54,7 +54,7 @@ export default () => (
       <SocialMediaLink href="https://www.instagram.com/possibly_tim/">
         <FaInstagram />
       </SocialMediaLink>
-    </SocialMedia>
+    </SocialMediaBar>
     <Copyright>
       {`© ${year} Tim Liang`}
     </Copyright>
