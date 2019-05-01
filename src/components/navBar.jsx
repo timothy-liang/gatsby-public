@@ -5,7 +5,7 @@ import "../styles/fonts.css"
 import Hamburger from "./hamburger"
 
 const NavBar = styled.div`
-  padding: 0px 20px;
+  padding: 0px 5vw;
 
   display: flex;
   flex-flow: row nowrap;
@@ -15,6 +15,10 @@ const NavBar = styled.div`
 
   @media (min-width: 699px) {
     margin-bottom: 6%;
+  }
+
+  @media (max-width: 699px) {
+    margin-bottom: -2vw;
   }
 `
 

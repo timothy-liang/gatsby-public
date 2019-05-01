@@ -4,7 +4,9 @@ import { Link } from "gatsby"
 import "../styles/fonts.css"
 
 const Hamburger = styled.button`
-  padding: 26px 15px 0px 0px;
+  position: relative;
+  top: 10px;
+  padding-top: 20px;
   display: inline-block;
   cursor: pointer;
   transition-property: opacity, filter;
@@ -120,11 +122,10 @@ const HamburgerMenu = styled.div`
     top: 50px;
     left: 0px;
     height: ${props => (props.active ? "40%" : "0%")};
-    transition: height .32s;
+    box-shadow: ${props => (props.active ? "0 4px 4px -4px rgba(0, 0, 0, 0.1)" : "none")};
+    transition: height .32s, box-shadow .32s;
     transition-timing-function: ease;
     z-index: 5;
-
-    box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.08);
 `
 
 export default class extends React.Component {
