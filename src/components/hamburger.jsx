@@ -103,7 +103,7 @@ const HamburgerLink = styled(({ active, ...props }) => <Link {...props} />)`
   margin: 20px auto;
   top: 26%;
 
-  font-family: Asap, sans-serif;
+  font-family: inherit;
   font-size: 30px;
   text-decoration: none;
   color: black;

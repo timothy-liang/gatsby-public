@@ -10,7 +10,7 @@ const Copyright = styled.div`
 
   color: #555555;
   font-size: 16px;
-  font-family: 'Asap', sans-serif;
+  font-family: inherit;
   letter-spacing: 1px;
 `
 

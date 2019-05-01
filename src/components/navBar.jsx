@@ -31,7 +31,7 @@ const NavLink = styled(({ focused, ...props }) => <Link {...props} />)`
   margin: 20px;
   padding: 2px 0px;
 
-  font-family: Asap, sans-serif;
+  font-family: inherit;
   font-size: 23px;
   letter-spacing: 1px;
   text-decoration: none;
@@ -53,7 +53,7 @@ const NavLogo = styled(props => <Link {...props} />)`
   margin: 20px;
   display: inline-box;
 
-  font-family: Asap, sans-serif;
+  font-family: inherit;
   font-size: 23px;
   letter-spacing: 1px;
   text-decoration: none;

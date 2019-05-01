@@ -38,7 +38,7 @@ const ContentBox = styled.div`
   box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.03);
 
   font-size: 15px;
-  font-family: Asap, sans-serif;
+  font-family: inherit;
 
   display: flex;
   align-items: center;

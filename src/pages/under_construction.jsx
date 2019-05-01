@@ -8,7 +8,7 @@ import "../styles/fonts.css"
 const TODO = styled.div`
   width: 195px;
   margin: 20vh auto 10vh auto;
-  font-family: Asap, sans-serif;
+  font-family: inherit;
   font-size: 20px;
   letter-spacing: 1px;
 `
