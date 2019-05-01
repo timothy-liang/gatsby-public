@@ -25,17 +25,17 @@ const ContentBox = styled.div`
   @media (min-width: 699px) {
     width: 500px;
     height: 400px;
-    margin: 12px;
+    margin: 8px;
   }
 
   @media (max-width: 699px) {
     width: 90vw;
     height: 72vw;
-    margin: 2.5vw auto;
+    margin: 2vw auto;
   }
 
   border-radius: 3px;
-  // box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.03);
 
   font-size: 15px;
   font-family: Asap, sans-serif;

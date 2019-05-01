@@ -24,7 +24,7 @@ const contentData = [
     color: "#DFE6E9",
     image: "ads_logo.svg",
     imageSize: "38%",
-    to: "/about/",
+    to: "/under_construction/",
   },
   {
     title: "Facebook",
@@ -32,7 +32,7 @@ const contentData = [
     color: "#E56969",
     image: "ig_logo_2.svg",
     imageSize: "43%",
-    to: "/about/",
+    to: "/under_construction/",
   },
   {
     title: "Google",
@@ -40,7 +40,7 @@ const contentData = [
     color: "#463F3A",
     image: "chrome_logo_2.svg",
     imageSize: "32%",
-    to: "/about/",
+    to: "/under_construction/",
   },
   {
     title: "Vanderbilt",
@@ -48,7 +48,7 @@ const contentData = [
     color: "#BCB8B1",
     image: "vandy_logo.png",
     imageSize: "35%",
-    to: "/about",
+    to: "/under_construction",
   },
 ]
 

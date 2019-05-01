@@ -14,7 +14,7 @@ const NavBar = styled.div`
   z-index: 3;
 
   @media (min-width: 699px) {
-    margin-bottom: 6%;
+    margin-bottom: 2%;
   }
 
   @media (max-width: 699px) {
@@ -39,6 +39,7 @@ const NavLink = styled(({ focused, ...props }) => <Link {...props} />)`
 
   :hover {
     cursor: pointer;
+    color: black;
   }
 
   @media (max-width: 699px) {
@@ -46,22 +47,25 @@ const NavLink = styled(({ focused, ...props }) => <Link {...props} />)`
   }
 `
 
-const NavLogo = styled.div`
+const NavLogo = styled(props => <Link {...props} />)`
   margin: 20px;
+  display: inline-box;
 
   font-family: Asap, sans-serif;
   font-size: 23px;
   letter-spacing: 1px;
+  text-decoration: none;
+  color: black;
 `
 
 export default props => (
   <NavBar>
     <div>
-      <NavLogo>TIM LIANG</NavLogo>
+      <NavLogo to="/">TIM LIANG</NavLogo>
     </div>
     <div>
       <NavLink to="/" focused={props.focus === "Work"}>Work</NavLink>
-      <NavLink to="/about/" focused={props.focus === "About"}>About</NavLink>
+      <NavLink to="/under_construction/" focused={props.focus === "About"}>About</NavLink>
       <Hamburger />
     </div>
   </NavBar>

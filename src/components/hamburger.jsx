@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import "../styles/fonts.css"
 
 const Hamburger = styled.button`
   position: relative;
@@ -98,7 +97,7 @@ const HamburgerLink = styled(({ active, ...props }) => <Link {...props} />)`
   display: block;
   border: none;
   margin: 20px auto;
-  top: 25%;
+  top: 26%;
 
   font-family: Asap, sans-serif;
   font-size: 30px;
@@ -126,6 +125,10 @@ const HamburgerMenu = styled.div`
     transition: height .32s, box-shadow .32s;
     transition-timing-function: ease;
     z-index: 5;
+
+    @media (min-width: 699px) {
+      display: none;
+    }
 `
 
 export default class extends React.Component {
@@ -151,7 +154,7 @@ export default class extends React.Component {
         </Hamburger>
         <HamburgerMenu active={this.state.isActive}>
           <HamburgerLink to="/" active={this.state.isActive}>Work</HamburgerLink>
-          <HamburgerLink to="/about/" active={this.state.isActive}>About</HamburgerLink>
+          <HamburgerLink to="/under_construction/" active={this.state.isActive}>About</HamburgerLink>
         </HamburgerMenu>
       </React.Fragment>
     )
