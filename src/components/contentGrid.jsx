@@ -84,7 +84,7 @@ const ContentOverlay = styled(({ backgroundColor, scrollPos, ...props }) => <Lin
           transition: opacity .4s;
         `
     }
-    if (props.scrollPos >= 50 && props.scrollPos < 250 && props.index === 1) {
+    if (props.scrollPos >= 50 && props.scrollPos < 300 && props.index === 1) {
       return `
           cursor: pointer;
           background-color: ${makeRGBA(props.backgroundColor, 0.93)};
@@ -92,7 +92,7 @@ const ContentOverlay = styled(({ backgroundColor, scrollPos, ...props }) => <Lin
           transition: opacity .4s;
         `
     }
-    if (props.scrollPos >= 250 && props.scrollPos < 450 && props.index === 2) {
+    if (props.scrollPos >= 300 && props.scrollPos < 550 && props.index === 2) {
       return `
           cursor: pointer;
           background-color: ${makeRGBA(props.backgroundColor, 0.93)};
@@ -100,7 +100,7 @@ const ContentOverlay = styled(({ backgroundColor, scrollPos, ...props }) => <Lin
           transition: opacity .4s;
         `
     }
-    if (props.scrollPos >= 450 && props.index === 3) {
+    if (props.scrollPos >= 550 && props.index === 3) {
       return `
           cursor: pointer;
           background-color: ${makeRGBA(props.backgroundColor, 0.93)};
