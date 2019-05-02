@@ -38,7 +38,7 @@ const ContentBox = styled.div`
   box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.03);
 
   font-size: 15px;
-  font-family: inherit;
+  font-family: Asap, sans-serif;
 
   display: flex;
   align-items: center;
@@ -51,7 +51,7 @@ const makeRGBA = (hex, opacity) => {
   return `rgba(${r},${g},${b},${opacity})`
 }
 
-const ContentOverlay = styled(({ backgroundColor, ...props }) => <Link {...props} />)`
+const ContentOverlay = styled(({ backgroundColor, scrollPos, ...props }) => <Link {...props} />)`
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -73,6 +73,42 @@ const ContentOverlay = styled(({ backgroundColor, ...props }) => <Link {...props
       transition: opacity .4s;
     }
   }
+
+  ${(props) => {
+    if (props.scrollPos < 50 && props.index === 0) {
+      return `
+        cursor: pointer;
+        background-color: ${makeRGBA(props.backgroundColor, 0.93)};
+        opacity: 1;
+        transition: opacity .4s;
+      `
+    }
+    if (props.scrollPos >= 50 && props.scrollPos < 300 && props.index === 1) {
+      return `
+        cursor: pointer;
+        background-color: ${makeRGBA(props.backgroundColor, 0.93)};
+        opacity: 1;
+        transition: opacity .4s;
+      `
+    }
+    if (props.scrollPos >= 300 && props.scrollPos < 450 && props.index === 2) {
+      return `
+        cursor: pointer;
+        background-color: ${makeRGBA(props.backgroundColor, 0.93)};
+        opacity: 1;
+        transition: opacity .4s;
+      `
+    }
+    if (props.scrollPos >= 450 && props.index === 3) {
+      return `
+        cursor: pointer;
+        background-color: ${makeRGBA(props.backgroundColor, 0.93)};
+        opacity: 1;
+        transition: opacity .4s;
+      `
+    }
+    return ""
+  }}
 `
 
 const ContentTitle = styled.div`
@@ -102,21 +138,58 @@ const ContentDesc = props => (
   </React.Fragment>
 )
 
-const makeContent = (contentData, index) => (
+const makeContent = (contentData, index, scrollPos) => (
   <ContentBox
     key={index}
     backgroundColor={contentData.color}
     backgroundImage={contentData.image}
     backgroundSize={contentData.imageSize}
   >
-    <ContentOverlay backgroundColor={contentData.color} to={contentData.to}>
+    <ContentOverlay
+      backgroundColor={contentData.color}
+      to={contentData.to}
+      scrollPos={scrollPos}
+      index={index}
+    >
       <ContentDesc title={contentData.title} subtitle={contentData.subtitle} />
     </ContentOverlay>
   </ContentBox>
 )
 
-export default props => (
-  <ContentGrid>
-    {props.contentData.map((data, index) => makeContent(data, index))}
-  </ContentGrid>
-)
+// export default props => (
+//   <ContentGrid>
+//     {props.contentData.map((data, index) => makeContent(data, index))}
+//   </ContentGrid>
+// )
+
+export default class extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { scrollPos: 0 }
+    this.props = props
+    this.handleScroll = this.handleScroll.bind(this)
+  }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll)
+  }
+
+  comopnentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll)
+  }
+
+  handleScroll(event) {
+    // console.log(window.pageYOffset)
+    this.setState({ scrollPos: window.pageYOffset })
+  }
+
+  render() {
+    return (
+      <ContentGrid>
+        {this.props.contentData.map((data, index) => makeContent(
+          data, index, this.state.scrollPos,
+        ))}
+      </ContentGrid>
+    )
+  }
+}
