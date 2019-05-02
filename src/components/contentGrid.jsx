@@ -65,7 +65,7 @@ const ContentOverlay = styled(({ backgroundColor, scrollPos, ...props }) => <Lin
 
   overflow:hidden;
 
-  @media (hover: hover) {
+  @media (min-width: 699px) {
     :hover {
       cursor: pointer;
       background-color: ${props => makeRGBA(props.backgroundColor, 0.93)};
