@@ -158,8 +158,20 @@ export default class extends React.Component {
           </HamburgerBox>
         </Hamburger>
         <HamburgerMenu active={this.state.isActive}>
-          <HamburgerLink to="/" active={this.state.isActive}>Work</HamburgerLink>
-          <HamburgerLink to="/under_construction/" active={this.state.isActive}>About</HamburgerLink>
+          <HamburgerLink
+            onClick={this.handleClick}
+            to="/"
+            active={this.state.isActive}
+          >
+            Work
+          </HamburgerLink>
+          <HamburgerLink
+            onClick={this.handleClick}
+            to="/under_construction/"
+            active={this.state.isActive}
+          >
+            About
+          </HamburgerLink>
         </HamburgerMenu>
       </React.Fragment>
     )
