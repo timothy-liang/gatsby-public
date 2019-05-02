@@ -140,13 +140,12 @@ export default class extends React.Component {
   constructor(props) {
     super(props)
     this.state = { isActive: false }
-    this.handleClick = this.handleClick.bind(this)
-  }
 
-  handleClick() {
-    this.setState(state => ({
-      isActive: !state.isActive,
-    }))
+    this.handleClick = () => {
+      this.setState(state => ({
+        isActive: !state.isActive,
+      }))
+    }
   }
 
   render() {
