@@ -76,31 +76,10 @@ const ContentOverlay = styled(({ backgroundColor, scrollPos, ...props }) => <Lin
 
   @media (max-width: 699px) {
   ${(props) => {
-    if (props.scrollPos < 50 && props.index === 0) {
-      return `
-          cursor: pointer;
-          background-color: ${makeRGBA(props.backgroundColor, 0.93)};
-          opacity: 1;
-          transition: opacity .4s;
-        `
-    }
-    if (props.scrollPos >= 50 && props.scrollPos < 300 && props.index === 1) {
-      return `
-          cursor: pointer;
-          background-color: ${makeRGBA(props.backgroundColor, 0.93)};
-          opacity: 1;
-          transition: opacity .4s;
-        `
-    }
-    if (props.scrollPos >= 300 && props.scrollPos < 550 && props.index === 2) {
-      return `
-          cursor: pointer;
-          background-color: ${makeRGBA(props.backgroundColor, 0.93)};
-          opacity: 1;
-          transition: opacity .4s;
-        `
-    }
-    if (props.scrollPos >= 550 && props.index === 3) {
+    if ((props.index === 0 && props.scrollPos < 50)
+      || (props.index === 1 && props.scrollPos >= 50 && props.scrollPos < 300)
+      || (props.index === 2 && props.scrollPos >= 300 && props.scrollPos < 550)
+      || (props.index === 3 && props.scrollPos >= 550)) {
       return `
           cursor: pointer;
           background-color: ${makeRGBA(props.backgroundColor, 0.93)};
@@ -158,17 +137,10 @@ const makeContent = (contentData, index, scrollPos) => (
   </ContentBox>
 )
 
-// export default props => (
-//   <ContentGrid>
-//     {props.contentData.map((data, index) => makeContent(data, index))}
-//   </ContentGrid>
-// )
-
 export default class extends React.Component {
   constructor(props) {
     super(props)
     this.state = { scrollPos: 0 }
-    this.props = props
     this.handleScroll = this.handleScroll.bind(this)
   }
 
@@ -181,7 +153,6 @@ export default class extends React.Component {
   }
 
   handleScroll(event) {
-    // console.log(window.pageYOffset)
     this.setState({ scrollPos: window.pageYOffset })
   }
 
