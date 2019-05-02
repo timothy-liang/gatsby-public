@@ -57,7 +57,7 @@ const ContentOverlay = styled(({ backgroundColor, scrollPos, ...props }) => <Lin
   opacity: 0;
   border-radius: 3px;
 
-  transition: opacity 0s, background-color .2s;
+  transition: opacity .2s, background-color .2s;
   transition-timing-function: ease;
   background-color: ${props => makeRGBA(props.backgroundColor, 0)};
 
@@ -65,7 +65,7 @@ const ContentOverlay = styled(({ backgroundColor, scrollPos, ...props }) => <Lin
 
   overflow:hidden;
 
-  @media (min-width: 699px) {
+  @media (min-width: 699px) and (hover: hover) {
     :hover {
       cursor: pointer;
       background-color: ${props => makeRGBA(props.backgroundColor, 0.93)};
