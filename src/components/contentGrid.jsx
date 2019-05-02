@@ -74,41 +74,43 @@ const ContentOverlay = styled(({ backgroundColor, scrollPos, ...props }) => <Lin
     }
   }
 
+  @media (max-width: 699px) {
   ${(props) => {
     if (props.scrollPos < 50 && props.index === 0) {
       return `
-        cursor: pointer;
-        background-color: ${makeRGBA(props.backgroundColor, 0.93)};
-        opacity: 1;
-        transition: opacity .4s;
-      `
+          cursor: pointer;
+          background-color: ${makeRGBA(props.backgroundColor, 0.93)};
+          opacity: 1;
+          transition: opacity .4s;
+        `
     }
     if (props.scrollPos >= 50 && props.scrollPos < 300 && props.index === 1) {
       return `
-        cursor: pointer;
-        background-color: ${makeRGBA(props.backgroundColor, 0.93)};
-        opacity: 1;
-        transition: opacity .4s;
-      `
+          cursor: pointer;
+          background-color: ${makeRGBA(props.backgroundColor, 0.93)};
+          opacity: 1;
+          transition: opacity .4s;
+        `
     }
     if (props.scrollPos >= 300 && props.scrollPos < 450 && props.index === 2) {
       return `
-        cursor: pointer;
-        background-color: ${makeRGBA(props.backgroundColor, 0.93)};
-        opacity: 1;
-        transition: opacity .4s;
-      `
+          cursor: pointer;
+          background-color: ${makeRGBA(props.backgroundColor, 0.93)};
+          opacity: 1;
+          transition: opacity .4s;
+        `
     }
     if (props.scrollPos >= 450 && props.index === 3) {
       return `
-        cursor: pointer;
-        background-color: ${makeRGBA(props.backgroundColor, 0.93)};
-        opacity: 1;
-        transition: opacity .4s;
-      `
+          cursor: pointer;
+          background-color: ${makeRGBA(props.backgroundColor, 0.93)};
+          opacity: 1;
+          transition: opacity .4s;
+        `
     }
     return ""
   }}
+  }
 `
 
 const ContentTitle = styled.div`
