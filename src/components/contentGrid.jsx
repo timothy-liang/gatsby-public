@@ -145,7 +145,7 @@ export default class extends React.Component {
     window.addEventListener("scroll", this.handleScroll)
   }
 
-  comopnentWillUnmount() {
+  componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll)
   }
 
