@@ -51,7 +51,7 @@ const makeRGBA = (hex, opacity) => {
   return `rgba(${r},${g},${b},${opacity})`
 }
 
-const ContentOverlay = styled(({ backgroundColor, scrollPos, ...props }) => <Link {...props} />)`
+const ContentOverlay = styled(({ backgroundColor, hoverIndex, ...props }) => <Link {...props} />)`
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -76,10 +76,10 @@ const ContentOverlay = styled(({ backgroundColor, scrollPos, ...props }) => <Lin
 
   @media (max-width: 699px) {
   ${(props) => {
-    if ((props.index === 0 && props.scrollPos < 50)
-      || (props.index === 1 && props.scrollPos >= 50 && props.scrollPos < 300)
-      || (props.index === 2 && props.scrollPos >= 300 && props.scrollPos < 550)
-      || (props.index === 3 && props.scrollPos >= 550)) {
+    if ((props.index === props.hoverIndex)
+      || (props.index === props.hoverIndex)
+      || (props.index === props.hoverIndex)
+      || (props.index === props.hoverIndex)) {
       return `
           cursor: pointer;
           background-color: ${makeRGBA(props.backgroundColor, 0.93)};
@@ -119,7 +119,7 @@ const ContentDesc = props => (
   </React.Fragment>
 )
 
-const makeContent = (contentData, index, scrollPos) => (
+const makeContent = (contentData, index, hoverIndex) => (
   <ContentBox
     key={index}
     backgroundColor={contentData.color}
@@ -129,7 +129,7 @@ const makeContent = (contentData, index, scrollPos) => (
     <ContentOverlay
       backgroundColor={contentData.color}
       to={contentData.to}
-      scrollPos={scrollPos}
+      hoverIndex={hoverIndex}
       index={index}
     >
       <ContentDesc title={contentData.title} subtitle={contentData.subtitle} />
@@ -140,7 +140,7 @@ const makeContent = (contentData, index, scrollPos) => (
 export default class extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { scrollPos: 0 }
+    this.state = { hoverIndex: 0 }
     this.handleScroll = this.handleScroll.bind(this)
   }
 
@@ -153,14 +153,30 @@ export default class extends React.Component {
   }
 
   handleScroll(event) {
-    this.setState({ scrollPos: window.pageYOffset })
+    const pos = window.pageYOffset
+    const break1 = 50
+    const break2 = 300
+    const break3 = 550
+    let newhoverIndex = 0
+    if (pos < break1) {
+      newhoverIndex = 0
+    } else if (pos >= break1 && pos < break2) {
+      newhoverIndex = 1
+    } else if (pos >= break2 && pos < break3) {
+      newhoverIndex = 2
+    } else {
+      newhoverIndex = 3
+    }
+    if (this.state.hoverIndex !== newhoverIndex) {
+      this.setState({ hoverIndex: newhoverIndex })
+    }
   }
 
   render() {
     return (
       <ContentGrid>
         {this.props.contentData.map((data, index) => makeContent(
-          data, index, this.state.scrollPos,
+          data, index, this.state.hoverIndex,
         ))}
       </ContentGrid>
     )
