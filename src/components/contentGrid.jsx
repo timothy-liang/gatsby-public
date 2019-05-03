@@ -152,18 +152,16 @@ export default class extends React.Component {
     const break1 = 50
     const break2 = 300
     const break3 = 550
-    let newhoverIndex = 0
-    if (pos < break1) {
-      newhoverIndex = 0
-    } else if (pos >= break1 && pos < break2) {
-      newhoverIndex = 1
-    } else if (pos >= break2 && pos < break3) {
-      newhoverIndex = 2
-    } else {
-      newhoverIndex = 3
+    let newHoverIndex = 0
+    if (pos > break3) {
+      newHoverIndex = 3
+    } else if (pos > break2) {
+      newHoverIndex = 2
+    } else if (pos > break1) {
+      newHoverIndex = 1
     }
-    if (this.state.hoverIndex !== newhoverIndex) {
-      this.setState({ hoverIndex: newhoverIndex })
+    if (this.state.hoverIndex !== newHoverIndex) {
+      this.setState({ hoverIndex: newHoverIndex })
     }
   }
 
