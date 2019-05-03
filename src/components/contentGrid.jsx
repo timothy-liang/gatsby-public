@@ -65,7 +65,7 @@ const ContentOverlay = styled(({ backgroundColor, hoverIndex, ...props }) => <Li
 
   overflow:hidden;
 
-  @media (any-hover: hover) {
+  @media (hover: hover) {
     :hover {
       cursor: pointer;
       background-color: ${props => makeRGBA(props.backgroundColor, 0.93)};
@@ -74,7 +74,7 @@ const ContentOverlay = styled(({ backgroundColor, hoverIndex, ...props }) => <Li
     }
   }
 
-  @media (any-hover: none) {
+  @media (hover: none) {
   ${(props) => {
     if (props.index === props.hoverIndex) {
       return `
