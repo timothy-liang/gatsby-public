@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
+import AnimateLoad from "./animate"
+
 const ContentGrid = styled.div`
   width: 90%;
   max-width: 1050px;
@@ -167,11 +169,13 @@ export default class extends React.Component {
 
   render() {
     return (
-      <ContentGrid>
-        {this.props.contentData.map((data, index) => makeContent(
-          data, index, this.state.hoverIndex,
-        ))}
-      </ContentGrid>
+      <AnimateLoad>
+        <ContentGrid>
+          {this.props.contentData.map((data, index) => makeContent(
+            data, index, this.state.hoverIndex,
+          ))}
+        </ContentGrid>
+      </AnimateLoad>
     )
   }
 }
