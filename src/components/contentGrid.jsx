@@ -75,17 +75,13 @@ const ContentOverlay = styled(({ backgroundColor, hoverIndex, ...props }) => <Li
   }
 
   @media (hover: none) {
-  ${(props) => {
-    if (props.index === props.hoverIndex) {
-      return `
-          cursor: pointer;
-          background-color: ${makeRGBA(props.backgroundColor, 0.93)};
-          opacity: 1;
-          transition: opacity .4s;
-        `
-    }
-    return ""
-  }}
+  ${props => (props.index === props.hoverIndex && `
+      cursor: pointer;
+      background-color: ${makeRGBA(props.backgroundColor, 0.93)};
+      opacity: 1;
+      transition: opacity .4s;
+    `
+  )}
   }
 `
 

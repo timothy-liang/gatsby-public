@@ -73,7 +73,7 @@ const HamburgerInner = styled.span`
                 transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
 
-  ${props => (props.active ? `
+  ${props => (props.active && `
     transform: translate3d(0, -10px, 0) rotate(-45deg);
     transition-delay: 0.22s;
     transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -91,7 +91,7 @@ const HamburgerInner = styled.span`
                   transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
     }
   `
-    : "")}
+  )}
 `
 
 const HamburgerLink = styled(({ active, ...props }) => <Link {...props} />)`
