@@ -13,8 +13,8 @@ const contentData = [
     to: "/under_construction/",
   },
   {
-    title: "Facebook",
-    subtitle: "IG Growth Ranking",
+    title: "Instagram",
+    subtitle: "Growth Ranking",
     color: "#E56969",
     image: "ig_logo_2.svg",
     imageSize: "43%",
