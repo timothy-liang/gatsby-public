@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-// Original animations by https://jonsuh.com/hamburgers/
+// Original icon animation by https://jonsuh.com/hamburgers/
 
 const Hamburger = styled.button`
   position: relative;
