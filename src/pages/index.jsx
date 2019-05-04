@@ -24,7 +24,7 @@ const contentData = [
   {
     title: "Google",
     subtitle: "Skia Graphics",
-    color: "#141B41",
+    color: "#273043",
     image: "chrome_logo_2.svg",
     imageSize: "32%",
     to: "/under_construction/",
