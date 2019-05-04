@@ -1,5 +1,6 @@
 import React from "react"
 
+import { withTheme } from "styled-components"
 import ContentGrid from "../components/contentGrid"
 import Layout from "../components/layout"
 
@@ -23,7 +24,7 @@ const contentData = [
   {
     title: "Google",
     subtitle: "Skia Graphics",
-    color: "#463F3A",
+    color: "#273043",
     image: "chrome_logo_2.svg",
     imageSize: "32%",
     to: "/under_construction/",
@@ -31,16 +32,31 @@ const contentData = [
   {
     title: "Vanderbilt",
     subtitle: "Research & TA",
-    color: "#BCB8B1",
+    color: "#EADBC9",
     image: "vandy_logo.png",
     imageSize: "35%",
     to: "/under_construction",
   },
 ]
 
-// FFE5D9 - peach    //BB8588 - unsaturated red
-// F0B67F - orangish //ffdf9e - ig light yellow
+// TODO - make a file for this
+// FFE5D9 - peach
+// F0B67F - orangish
 // E56969 - ig red
+// E1306C - ig red v2
+// BCB8B1 - Black Shadows
+// 463F3A - Taupe
+// D8AB4C - VanderbiltGold
+// EBD2B4 - Desert Sand
+// EADBC9 - Pearl
+// 141B41 - Yankees Blue
+// BB8588 - unsaturated red
+// ffdf9e - ig light yellow
+// DFE6E9 - Platinum
+// 252C54 - Space Cadet
+// 273043 - Gun Metal
+// 403F4C - Arsenic
+// 241623 - Raisin Black
 
 export default () => (
   <Layout focus="Work">
