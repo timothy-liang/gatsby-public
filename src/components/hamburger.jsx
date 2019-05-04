@@ -130,7 +130,7 @@ const HamburgerSocialBarWrapper = styled.div`
 `
 
 const HamburgerLinksCluster = styled.div`
-  margin-top: 50px
+  margin-top: 100px
 `
 
 const HamburgerMenu = styled.div`
@@ -139,7 +139,7 @@ const HamburgerMenu = styled.div`
     position: absolute;
     top: 50px;
     left: 0px;
-    height: ${props => (props.active ? "350px" : "0%")};
+    height: ${props => (props.active ? "calc(100% - 49px)" : "0%")};
     box-shadow: ${props => (props.active ? "0 4px 4px -4px rgba(0, 0, 0, 0.1)" : "none")};
     transition: height .32s, box-shadow .32s};
     transition-timing-function: ease;
@@ -160,6 +160,16 @@ export default class extends React.Component {
     this.state = { isActive: false }
 
     this.handleClick = () => {
+      if (this.state.isActive) {
+        document.body.style.overflow = "visible"
+        document.body.ontouchmove = (e) => {
+          e.preventDefault()
+          return false
+        }
+      } else {
+        document.body.style.overflow = "hidden"
+        document.body.unbind("ontouchmove")
+      }
       this.setState(state => ({
         isActive: !state.isActive,
       }))
