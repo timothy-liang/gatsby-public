@@ -137,7 +137,7 @@ const HamburgerLinksCluster = styled.div`
 const HamburgerMenu = styled.div`
     background-color: white;
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 50px;
     left: 0px;
     height: ${props => (props.active ? "calc(100% - 49px)" : "0%")};
