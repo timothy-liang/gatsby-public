@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock"
 
 import SocialBar from "./socialBar"
 
@@ -161,11 +160,7 @@ export default class extends React.Component {
     this.state = { isActive: false }
 
     this.handleClick = () => {
-      if (this.state.isActive) {
-        enableBodyScroll(document.body)
-      } else {
-        disableBodyScroll(document.body)
-      }
+      document.body.style.position = this.state.isActive ? "static" : "fixed"
       this.setState(state => ({
         isActive: !state.isActive,
       }))
@@ -173,7 +168,7 @@ export default class extends React.Component {
   }
 
   componentWillUnmount() {
-    clearAllBodyScrollLocks()
+    document.body.style.position = "static"
   }
 
   render() {
