@@ -5,7 +5,7 @@ import "../styles/fonts.css"
 import Hamburger from "./hamburger"
 
 const NavBar = styled.div`
-  padding: 0px 5vw;
+  width: 100vw;
 
   display: flex;
   flex-flow: row nowrap;

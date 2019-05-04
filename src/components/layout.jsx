@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     font-family: Asap, sans-serif;
+    overflow-x: hidden;
   }
 `
 

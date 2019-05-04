@@ -9,6 +9,7 @@ import SocialBar from "./socialBar"
 const Hamburger = styled.button`
   position: relative;
   top: 10px;
+  left: -4vw;
   padding-top: 20px;
   display: inline-block;
   cursor: pointer;
@@ -130,7 +131,8 @@ const HamburgerSocialBarWrapper = styled.div`
 `
 
 const HamburgerLinksCluster = styled.div`
-  margin-top: 100px
+  margin-top: 100px;
+  pointer-events: ${props => (props.active ? "auto" : "none")};
 `
 
 const HamburgerMenu = styled.div`
@@ -180,7 +182,7 @@ export default class extends React.Component {
           </HamburgerBox>
         </Hamburger>
         <HamburgerMenu active={this.state.isActive}>
-          <HamburgerLinksCluster>
+          <HamburgerLinksCluster active={this.state.isActive}>
             <HamburgerLink
               onClick={this.handleClick}
               to="/"
