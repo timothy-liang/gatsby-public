@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock"
 
 import SocialBar from "./socialBar"
 
@@ -161,19 +162,18 @@ export default class extends React.Component {
 
     this.handleClick = () => {
       if (this.state.isActive) {
-        document.body.style.overflow = "visible"
-        document.body.ontouchmove = (e) => {
-          e.preventDefault()
-          return false
-        }
+        enableBodyScroll(document.body)
       } else {
-        document.body.style.overflow = "hidden"
-        document.body.unbind("ontouchmove")
+        disableBodyScroll(document.body)
       }
       this.setState(state => ({
         isActive: !state.isActive,
       }))
     }
+  }
+
+  componentWillUnmount() {
+    clearAllBodyScrollLocks()
   }
 
   render() {
