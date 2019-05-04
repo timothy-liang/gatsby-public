@@ -163,8 +163,10 @@ export default class extends React.Component {
     this.handleClick = () => {
       if (this.state.isActive) {
         enableBodyScroll(document.body)
+        document.body.style.height = "auto"
       } else {
         disableBodyScroll(document.body)
+        document.body.style.height = "100%"
       }
       this.setState(state => ({
         isActive: !state.isActive,
