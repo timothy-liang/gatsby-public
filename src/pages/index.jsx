@@ -24,7 +24,7 @@ const contentData = [
   {
     title: "Google",
     subtitle: "Skia Graphics",
-    color: "#273043",
+    color: "#241623",
     image: "chrome_logo_2.svg",
     imageSize: "32%",
     to: "/under_construction/",
@@ -32,7 +32,7 @@ const contentData = [
   {
     title: "Vanderbilt",
     subtitle: "Research & TA",
-    color: "#EADBC9",
+    color: "#EBD2B4",
     image: "vandy_logo.png",
     imageSize: "35%",
     to: "/under_construction",
