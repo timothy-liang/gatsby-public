@@ -4,7 +4,6 @@ import { FaInstagram, FaLinkedinIn } from "react-icons/fa"
 import { MdMailOutline } from "react-icons/md"
 
 const SocialMediaBar = styled.div`
-  margin-top: 30px;
   color: black;
   display: flex;
   flex-wrap: nowrap;

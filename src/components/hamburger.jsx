@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
+import SocialBar from "./socialBar"
+
 // Original icon animation by https://jonsuh.com/hamburgers/
 
 const Hamburger = styled.button`
@@ -95,13 +97,11 @@ const HamburgerInner = styled.span`
 `
 
 const HamburgerLink = styled(({ active, ...props }) => <Link {...props} />)`
-  position: relative;
   width: 200px;
 
   display: block;
   border: none;
   margin: 20px auto;
-  top: 26%;
 
   font-family: inherit;
   font-size: 30px;
@@ -119,17 +119,35 @@ const HamburgerLink = styled(({ active, ...props }) => <Link {...props} />)`
   transition-timing-function: ease-in;
 `
 
+const HamburgerSocialBarWrapper = styled.div`
+  border-top: 1px solid #EEEEEE;
+  padding-top: 5px;
+
+  opacity: ${props => (props.active ? "1" : "0")};
+  transition: opacity ${props => (props.active ? "0.7s" : "0s")};
+  pointer-events: ${props => (props.active ? "auto" : "none")};
+  transition-timing-function: ease-in;
+`
+
+const HamburgerLinksCluster = styled.div`
+  margin-top: 50px
+`
+
 const HamburgerMenu = styled.div`
     background-color: white;
     width: 100%;
     position: absolute;
     top: 50px;
     left: 0px;
-    height: ${props => (props.active ? "350px" : "0px")};
+    height: ${props => (props.active ? "350px" : "0%")};
     box-shadow: ${props => (props.active ? "0 4px 4px -4px rgba(0, 0, 0, 0.1)" : "none")};
-    transition: height .32s, box-shadow .32s;
+    transition: height .32s, box-shadow .32s};
     transition-timing-function: ease;
     z-index: 5;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     @media (min-width: 699px) {
       display: none;
@@ -157,20 +175,25 @@ export default class extends React.Component {
           </HamburgerBox>
         </Hamburger>
         <HamburgerMenu active={this.state.isActive}>
-          <HamburgerLink
-            onClick={this.handleClick}
-            to="/"
-            active={this.state.isActive}
-          >
+          <HamburgerLinksCluster>
+            <HamburgerLink
+              onClick={this.handleClick}
+              to="/"
+              active={this.state.isActive}
+            >
             Work
-          </HamburgerLink>
-          <HamburgerLink
-            onClick={this.handleClick}
-            to="/under_construction/"
-            active={this.state.isActive}
-          >
+            </HamburgerLink>
+            <HamburgerLink
+              onClick={this.handleClick}
+              to="/under_construction/"
+              active={this.state.isActive}
+            >
             About
-          </HamburgerLink>
+            </HamburgerLink>
+          </HamburgerLinksCluster>
+          <HamburgerSocialBarWrapper active={this.state.isActive}>
+            <SocialBar />
+          </HamburgerSocialBarWrapper>
         </HamburgerMenu>
       </React.Fragment>
     )

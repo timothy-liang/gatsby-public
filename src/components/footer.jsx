@@ -13,13 +13,17 @@ const Copyright = styled.div`
   letter-spacing: 1px;
 `
 
+const Footer = styled.div`
+  margin-top: 30px;
+`
+
 const year = new Date().getFullYear()
 
 export default () => (
-  <React.Fragment>
+  <Footer>
     <SocialBar />
     <Copyright>
       {`© ${year} Tim Liang`}
     </Copyright>
-  </React.Fragment>
+  </Footer>
 )
